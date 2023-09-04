@@ -15,7 +15,6 @@ export default function Admin() {
             await fetch('https://hostelhelpserver.vercel.app/adminlog', {
                 method: 'POST',
                 headers: {
-                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.vercel.app/',
                     'Content-type': 'application/json'
                 },
                 credentials: 'include',

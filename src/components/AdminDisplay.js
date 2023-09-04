@@ -32,7 +32,6 @@ export default function AdminDisplay() {
             await fetch('https://hostelhelpserver.vercel.app/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
-                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.vercel.app/',
                     'Content-type': 'include'
                 },
                 credentials: 'include'
@@ -112,7 +111,6 @@ export default function AdminDisplay() {
             await fetch('https://hostelhelpserver.vercel.app/handlesolved', {
                 method: "POST",
                 headers: {
-                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.vercel.app/',
                     'Content-type': 'application/json'
                 },
                 credentials: 'include',

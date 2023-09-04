@@ -25,7 +25,6 @@ export default function Student() {
                 await fetch('https://hostelhelpserver.vercel.app/upload_prob', {
                     method: 'POST',
                     headers: {
-                        'Access-Control-Allow-Origin': 'https://hostelhelpserver.vercel.app/',
                         'Content-type': 'application/json'
                     },
                     credentials: 'include',

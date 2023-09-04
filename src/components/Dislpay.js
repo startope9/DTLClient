@@ -23,7 +23,6 @@ export default function Display() {
             await fetch('https://hostelhelpserver.vercel.app/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
-                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.vercel.app/',
                     'Content-type': 'include'
                 },
                 credentials: 'include'
@@ -52,7 +51,6 @@ export default function Display() {
                 await fetch('https://hostelhelpserver.vercel.app/likeaction/' + 'dislike', {
                     method: "POST",
                     headers: {
-                        'Access-Control-Allow-Control': 'https://hostelhelpserver.vercel.app/',
                         'Content-type': 'application/json'
                     },
                     credentials: 'include',
@@ -76,7 +74,6 @@ export default function Display() {
                 await fetch('https://hostelhelpserver.vercel.app/likeaction/' + 'like', {
                     method: "POST",
                     headers: {
-                        'Access-Control-Allow-Control': 'https://hostelhelpserver.vercel.app/',
                         'Content-type': 'application/json'
                     },
                     credentials: 'include',
