@@ -1,0 +1,126 @@
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00C9A7;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00C9A7;
+}
+
+::selection {
+    background-color: #1967D2;
+    color: white;
+}
+
+
+.first-action {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    align-self: center;
+}
+
+.admin-log {
+    margin-top: 5%;
+}
+
+.text-area {
+    resize: vertical;
+    padding: 16.5px 14px;
+    font-family: 'Cochin';
+    font-size: 17px;
+}
+
+.input {
+    background-color: white;
+}
+
+.textarea {
+    background-color: white;
+}
+
+.room-input {
+    background-color: white;
+}
+
+.prob-inp {
+    background-color: white;
+}
+
+.lets-try {
+    width: max-content;
+    height: max-content;
+    padding: 5%;
+    border-radius: 20px;
+    background-image: linear-gradient(#F4F9FF, #E6F4F1);
+}
+
+.student-log {
+    width: max-content;
+    height: max-content;
+    padding: 5%;
+    background-image: linear-gradient(#F4F9FF, #E6F4F1);
+
+}
+
+.home {
+    background-image: linear-gradient(#c4fcefcd, white);
+    padding: 2%;
+    border-bottom: 1px solid #00C9A7;
+}
+
+.parent-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.child-card {
+    background-color: white;
+    width: 40%;
+    height: 400px;
+    padding: 4%;
+    border-radius: 25px;
+    margin: 3% 3% 3% 3%;
+    box-shadow: 0px 0px 10px 3px #9B89B3;
+    transition: all 0.5s ease-in-out;
+}
+
+.child-card:hover {
+    transform: scale(1.1);
+    background-image: linear-gradient(white, #c4fcefcd);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.problem-submit {
+    margin-top: 10% !important;
+}
+
+.child-card img {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 970px) {
+    .parent-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
