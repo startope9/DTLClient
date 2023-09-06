@@ -25,6 +25,7 @@ export default function SolvedProbs() {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'solved', {
                 method: "POST",
                 headers: {
+                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                     'Content-type': 'application/json',
                 },
                 credentials: 'include'

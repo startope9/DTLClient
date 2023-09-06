@@ -23,7 +23,8 @@ export default function Display() {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'include'
+                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
+                    'Content-type': 'application/json'
                 },
                 credentials: 'include'
             })
@@ -51,6 +52,7 @@ export default function Display() {
                 await fetch('https://hostelhelpserver.onrender.com/likeaction/' + 'dislike', {
                     method: "POST",
                     headers: {
+                        'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                         'Content-type': 'application/json'
                     },
                     credentials: 'include',
@@ -74,6 +76,7 @@ export default function Display() {
                 await fetch('https://hostelhelpserver.onrender.com/likeaction/' + 'like', {
                     method: "POST",
                     headers: {
+                        'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                         'Content-type': 'application/json'
                     },
                     credentials: 'include',

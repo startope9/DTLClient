@@ -15,6 +15,7 @@ export default function Admin() {
             await fetch('https://hostelhelpserver.onrender.com/adminlog', {
                 method: 'POST',
                 headers: {
+                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                     'Content-type': 'application/json'
                 },
                 credentials: 'include',

@@ -32,6 +32,7 @@ export default function AdminDisplay() {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
+                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                     'Content-type': 'include'
                 },
                 credentials: 'include'
@@ -111,6 +112,7 @@ export default function AdminDisplay() {
             await fetch('https://hostelhelpserver.onrender.com/handlesolved', {
                 method: "POST",
                 headers: {
+                    'Access-Control-Allow-Origin': 'https://hostelhelpserver.onrender.com',
                     'Content-type': 'application/json'
                 },
                 credentials: 'include',
