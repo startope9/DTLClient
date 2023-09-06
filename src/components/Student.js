@@ -22,7 +22,7 @@ export default function Student() {
             setalert('');
 
             (async () => {
-                await fetch('https://hostelhelpserver.vercel.app/upload_prob', {
+                await fetch('https://hostelhelpserver.onrender.com/upload_prob', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'

@@ -29,7 +29,7 @@ export default function AdminDisplay() {
 
     useEffect(() => {
         (async () => {
-            await fetch('https://hostelhelpserver.vercel.app/get_data/' + 'unsolved', {
+            await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'include'
@@ -108,7 +108,7 @@ export default function AdminDisplay() {
 
     const handleSolved = (_id) => {
         (async () => {
-            await fetch('https://hostelhelpserver.vercel.app/handlesolved', {
+            await fetch('https://hostelhelpserver.onrender.com/handlesolved', {
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json'

@@ -12,7 +12,7 @@ export default function Admin() {
 
     const handleSubmit = () => {
         (async () => {
-            await fetch('https://hostelhelpserver.vercel.app/adminlog', {
+            await fetch('https://hostelhelpserver.onrender.com/adminlog', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

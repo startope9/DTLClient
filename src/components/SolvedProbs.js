@@ -22,7 +22,7 @@ export default function SolvedProbs() {
 
     useEffect(() => {
         (async () => {
-            await fetch('https://hostelhelpserver.vercel.app/get_data/' + 'solved', {
+            await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'solved', {
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json',

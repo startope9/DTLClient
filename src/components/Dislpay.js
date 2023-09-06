@@ -20,7 +20,7 @@ export default function Display() {
 
     useEffect(() => {
         (async () => {
-            await fetch('https://hostelhelpserver.vercel.app/get_data/' + 'unsolved', {
+            await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'include'
@@ -48,7 +48,7 @@ export default function Display() {
             document.getElementById("outer-circle " + _id).classList.remove('addbg');
             document.getElementById('like-icon ' + _id).style.color = 'black';
             (async () => {
-                await fetch('https://hostelhelpserver.vercel.app/likeaction/' + 'dislike', {
+                await fetch('https://hostelhelpserver.onrender.com/likeaction/' + 'dislike', {
                     method: "POST",
                     headers: {
                         'Content-type': 'application/json'
@@ -71,7 +71,7 @@ export default function Display() {
             document.getElementById("outer-circle " + _id).classList.add('addbg');
             document.getElementById("like-icon " + _id).style.color = 'white';
             (async () => {
-                await fetch('https://hostelhelpserver.vercel.app/likeaction/' + 'like', {
+                await fetch('https://hostelhelpserver.onrender.com/likeaction/' + 'like', {
                     method: "POST",
                     headers: {
                         'Content-type': 'application/json'
