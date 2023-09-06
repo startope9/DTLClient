@@ -1,5 +1,5 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
@@ -9,6 +9,10 @@ export default function Admin() {
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
     const [alert, setAlert] = useState('')
+
+    useEffect(() => {
+        document.title = "Admin | Login"
+    }, [])
 
     const handleSubmit = () => {
         (async () => {

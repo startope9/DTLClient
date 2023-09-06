@@ -1,11 +1,16 @@
 import { Button, Typography } from "@mui/material"
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import './home.css'
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import AddIcon from '@mui/icons-material/Add';
 
 export default function Home() {
+
+    useEffect(() => {
+        document.title = 'hostelhubhome'
+    }, [])
+
     return (
         <div>
             <div className="home">

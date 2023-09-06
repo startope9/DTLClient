@@ -20,6 +20,7 @@ export default function Student() {
         else {
 
             setalert('');
+            document.title = 'Post Problem';
 
             (async () => {
                 await fetch('https://hostelhelpserver.onrender.com/upload_prob', {

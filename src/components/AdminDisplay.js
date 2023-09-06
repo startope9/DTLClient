@@ -28,6 +28,8 @@ export default function AdminDisplay() {
 
 
     useEffect(() => {
+        document.title = 'Admin | display';
+
         (async () => {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',

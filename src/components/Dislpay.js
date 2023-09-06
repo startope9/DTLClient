@@ -19,6 +19,7 @@ export default function Display() {
 
 
     useEffect(() => {
+        document.title = 'Unsolved problems';
         (async () => {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'unsolved', {
                 method: 'POST',
@@ -62,7 +63,7 @@ export default function Display() {
                 })
                     .then(res => res.json())
                     .then((res) => {
-                        console.log(res)
+                        // console.log(res)
                     })
                     .catch((err) => {
                         console.log(err)
@@ -86,7 +87,7 @@ export default function Display() {
                 })
                     .then(res => res.json())
                     .then((res) => {
-                        console.log(res)
+                        // console.log(res)
                     })
                     .catch((err) => {
                         console.log(err)

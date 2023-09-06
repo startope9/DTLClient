@@ -21,6 +21,7 @@ export default function SolvedProbs() {
 
 
     useEffect(() => {
+        document.title = 'solved Problems';
         (async () => {
             await fetch('https://hostelhelpserver.onrender.com/get_data/' + 'solved', {
                 method: "POST",
