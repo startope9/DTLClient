@@ -8,8 +8,8 @@ export default function Student() {
 
     const [number, setNumber] = useState('')
     const [desc, setDesc] = useState('')
-
     const [alert, setalert] = useState('')
+    const [error, setError] = useState('')
 
     const navigate = useNavigate()
 
@@ -41,7 +41,10 @@ export default function Student() {
                     .then((res) => {
                         if (res === 200) navigate('/')
                     })
-                    .catch((err) => console.log(err))
+                    .catch((err) => {
+                        console.log(err)
+                        setError(err)
+                    })
             })();
         }
     }

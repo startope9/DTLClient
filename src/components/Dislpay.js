@@ -5,11 +5,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 import { Pagination } from "@mui/material";
+import Loading from "./Loading";
 
 export default function Display() {
 
     const [arr, setArr] = useState([])
     const [arrdisplay, setArrayDisplay] = useState([])
+    const [error, setError] = useState('')
 
 
     const [value, pageValue] = useState(1)
@@ -37,6 +39,7 @@ export default function Display() {
                 })
                 .catch((err) => {
                     console.log(err)
+                    setError(err)
                 })
         })();
 
@@ -181,7 +184,10 @@ export default function Display() {
                             </center>
                         </div>
                     )
-                    : <Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem posted</Typography>
+                    : error.length ?
+                        (<Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem posted</Typography>)
+                        :
+                        (<div><Loading /> </div>)
                 }
             </div>
         </div>

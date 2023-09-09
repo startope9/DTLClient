@@ -3,12 +3,13 @@ import "./display.css"
 import { Typography, Fab, TextField, Stack, Button } from "@mui/material";
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 
-
+import Loading from "./Loading";
 import { Pagination } from "@mui/material";
 export default function AdminDisplay() {
 
     const [arr, setArr] = useState([])
     const [arrdisplay, setArrayDisplay] = useState([])
+    const [error, setError] = useState('')
 
 
     const [value, pageValue] = useState(1)
@@ -46,6 +47,7 @@ export default function AdminDisplay() {
                 })
                 .catch((err) => {
                     console.log(err)
+                    setError(err)
                 })
         })();
 
@@ -105,7 +107,7 @@ export default function AdminDisplay() {
         for (var i = 0; i < arr.length; i++) {
             if (i[3] !== _id) removed.push(i);
         }
-        if (arr === []) data_sort([])
+        if (!arr.length) data_sort([])
         else data_sort(removed)
     }
 
@@ -173,7 +175,11 @@ export default function AdminDisplay() {
                             </center>
                         </div>
                     )
-                    : <Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem posted</Typography>
+                    : error.length ?
+                        <Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem posted</Typography>
+                        :
+                        (<div><Loading /> </div>)
+
                 }
             </div>
         </div>

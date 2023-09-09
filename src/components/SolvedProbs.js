@@ -5,6 +5,7 @@ import { Typography, TextField } from "@mui/material";
 
 
 import { Pagination } from "@mui/material";
+import Loading from "./Loading";
 
 
 
@@ -12,6 +13,7 @@ export default function SolvedProbs() {
 
     const [arr, setArr] = useState([])
     const [arrdisplay, setArrayDisplay] = useState([])
+    const [error, setError] = useState('')
 
 
     const [value, pageValue] = useState(1)
@@ -39,6 +41,7 @@ export default function SolvedProbs() {
                 })
                 .catch((err) => {
                     console.log(err)
+                    setError(err)
                 })
         })();
     }, []);
@@ -120,7 +123,10 @@ export default function SolvedProbs() {
                             </center>
                         </div>
                     )
-                    : <Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem solved</Typography>
+                    : error.length ?
+                        (<Typography variant="body1" style={{ 'margin': '5px', 'color': 'red' }}>No problem solved</Typography>)
+                        :
+                        (<div><Loading /> </div>)
                 }
             </div>
         </div>
