@@ -1,6 +1,6 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,17 +10,21 @@ export default function Student() {
     const [desc, setDesc] = useState('')
     const [alert, setalert] = useState('')
     const [error, setError] = useState('')
+    const [check, setCheck] = useState(1)
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        document.title = 'Post Problem';
+    }, [])
 
     const handleProbSubmit = () => {
 
         if (number.length > 6) setalert("Enter appropriate room number");
 
         else {
-
             setalert('');
-            document.title = 'Post Problem';
+            setCheck(0);
 
             (async () => {
                 await fetch('https://hostelhelpserver.onrender.com/upload_prob', {
@@ -39,11 +43,15 @@ export default function Student() {
                 })
                     .then(res => res.json())
                     .then((res) => {
-                        if (res === 200) navigate('/')
+                        if (res === 200) {
+                            navigate('/')
+                            setCheck(1)
+                        }
                     })
                     .catch((err) => {
                         console.log(err)
                         setError(err)
+                        setCheck(1)
                     })
             })();
         }
@@ -64,7 +72,11 @@ export default function Student() {
                     <Typography variant="h6" style={{ 'color': '#414756' }}>Enter Room number</Typography><TextField className="room-input" helperText={alert} onChange={(e) => setNumber(e.target.value)} />
                     <Typography variant="h6" style={{ 'color': '#414756' }}>Problem Description</Typography>
                     <TextField multiline className="prob-inp" onChange={(e) => setDesc(e.target.value)} />
-                    <Button variant="contained" onClick={handleProbSubmit}>Submit</Button>
+                    {check ?
+                        <Button variant="contained" onClick={handleProbSubmit} helperText={error}>Submit</Button>
+                        :
+                        <Button variant="contained" disabled>Submit</Button>
+                    }
                 </Stack>
             </center>
         </div>
