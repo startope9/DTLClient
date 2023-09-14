@@ -163,7 +163,7 @@ export default function Display() {
                     (
                         <div>
                             <center style={{ 'margin': '1%' }}>
-                                <TextField id="usefetch" fullWidth onChange={handleChange} label="Search" />
+                                <TextField id="usefetch" fullWidth onChange={handleChange} label="Search Problem" />
                             </center>
                             <div className="why">
                                 {arrdisplay.slice(0 + sliceValue, columns + sliceValue).map((element) => (
