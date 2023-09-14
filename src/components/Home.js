@@ -11,7 +11,6 @@ export default function Home() {
 
     useEffect(() => {
         document.title = 'hostelhubhome'
-        console.log(window.innerWidth)
         if (window.innerWidth > 500) setVariant("h4")
         else setVariant("h5")
     }, [])
